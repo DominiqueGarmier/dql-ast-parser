@@ -1,0 +1,12 @@
+query BAR($jwt: string) {
+    jwt_blacklist(func: eq(jwt_token, $jwt)){
+        jwt_token
+    }
+}
+
+query FOO($username: string) {
+    user(func: eq(username, $username)) {
+        uid
+        password
+    }
+}
